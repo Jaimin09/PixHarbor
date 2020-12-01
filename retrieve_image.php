@@ -10,12 +10,15 @@ if (!$connection) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$id=$_POST['id'];
+$email=$_POST['email'];
 
-$query = "select * from user where id = '$id'";
+$query = "select * from images where email = '$email'";
 $res = mysqli_query($connection, $query);
-$row = mysqli_fetch_assoc($res);
-$image_name = $row['images'];
+$table = mysqli_fetch_assoc($res);
+
+//Insert here to access all rows of $table 
+
+$image_name = $table['images'];
 $path = "Images/$image_name";
 
 ?>

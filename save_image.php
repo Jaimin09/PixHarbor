@@ -11,13 +11,14 @@ if (!$connection) {
 }
 
 $image_name = $_POST['image_name'];
-$id=$_POST['id'];
-$image = 'image'.$image_name.'.jpg';
+$email=$_POST['email'];
+$folder=(explode(',',$image_name,0))
+$image = 'image'.$folder.$image_name.'.jpg';
 $path = "Images/$image_name";
 
 $flag = 0;
 
 // connect to the database
-$query = "update user set images = '$path' where id = '$id'";
+$query = "insert into images values('$email','$image_name')";
 $res = mysqli_query($connection, $query);
 
