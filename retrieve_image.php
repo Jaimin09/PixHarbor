@@ -14,13 +14,9 @@ $email=$_POST['email'];
 
 $query = "select * from images where email = '$email'";
 $res = mysqli_query($connection, $query);
-$table = mysqli_fetch_assoc($res);
+// $table = mysqli_fetch_assoc($res);
 
 //Insert here to access all rows of $table 
-
-$image_name = $table['images'];
-$path = "Images/$image_name";
-
 ?>
 
 <!DOCTYPE html> 
@@ -29,6 +25,12 @@ $path = "Images/$image_name";
  	<title>Retrieve Image</title> 
 </head> 
 <body> 
- 	<img src = $path> 
+<?php
+	while($row = mysqli_fetch_assoc($res)) {
+		$image_name = $table['images'];
+		$path = "Images/$image_name";
+		<img src = '$path'>				
+	}
+?>
 </body> 
 </html> 
