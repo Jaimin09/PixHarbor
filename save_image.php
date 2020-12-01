@@ -12,11 +12,11 @@ if (!$connection) {
 
 $image_name = $_POST['image_name'];
 $email=$_POST['email'];
-$folder=(explode(',',$image_name,0))
-$image = 'image'.$folder.$image_name.'.jpg';
-$path = "Images/$image_name";
+$folder=(explode('_',$image_name,2))
+$path = "Images/".$folder[0]."/".$image_name.'.jpg';
 
 // connect to the database
 $query = "insert into images values('$email','$image_name')";
 $res = mysqli_query($connection, $query);
 
+?>
