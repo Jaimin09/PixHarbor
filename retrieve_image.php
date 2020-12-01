@@ -16,7 +16,6 @@ $query = "select * from images where email = '$email'";
 $res = mysqli_query($connection, $query);
 // $table = mysqli_fetch_assoc($res);
 
-//Insert here to access all rows of $table 
 ?>
 
 <!DOCTYPE html> 
