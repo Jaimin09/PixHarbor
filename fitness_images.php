@@ -125,6 +125,7 @@ $email = "jaimin@gmail.com";
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="gallery.html">HOME</a></li>
+                    <li><a href="cart.html">COLLECTION</a></li>
                     <li><a href="profile.php">PROFILE</a></li>
                     <li><a href="home.html">LOGOUT</a></li>
 
