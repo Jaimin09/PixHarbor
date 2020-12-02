@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>
+        Update page
+    </title>
+    <style>
+        @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url("https://wallpapercave.com/wp/wp4991569.jpg");
+            ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: sans-serif;
+            color: white;
+        }
+
+
+        .login-box {
+            width: 45%;
+            border: 1px solid white;
+            padding: 40px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .login-box {
+                width: 95%;
+                border: 1px solid white;
+                padding: 40px;
+                border-radius: 5px;
+            }
+        }
+
+        .login-box h1 {
+            border-bottom: 4px solid #6cffe0;
+            margin-bottom: 40px;
+            padding-bottom: 10px;
+
+        }
+
+        .input input {
+            background: none;
+            border: none;
+            border-bottom: 2px solid #6cffe0;
+            width: 80%;
+            height: 35px;
+            margin-bottom: 30px;
+            color: aliceblue;
+            font-size: 18px;
+
+        }
+
+        .btn button {
+            align-self: center;
+            background: none;
+            border: 2px solid #6cffe0;
+            border-radius: 5px;
+            color: aqua;
+            font-size: 20px;
+            width: 100%;
+        }
+
+        .btn button:hover {
+            background-color: aquamarine;
+            color: black;
+        }
+
+        .signup {
+            color: #6cffe0;
+        }
+
+        .navbar-nav {
+            float: right;
+
+        }
+
+        .navbar {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .navbar-nav a {
+            color: white;
+            padding: 0;
+        }
+
+        .navbar-nav a:hover {
+            color: black;
+
+        }
+
+        .header {
+            display: inline;
+        }
+
+
+
+        ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: lightblue;
+            opacity: 0.8;
+            /* Firefox */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="header">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img style="height: 50px; width: 25%; margin-top: 30px;"
+                            src="Images/pixharbor2.png" /></a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="gallery.html">HOME</a></li>
+                    <li><a href="display_cart.php">CART</a></li>
+                    <li><a href="profile.php">PROFILE</a></li>
+                    <li><a href="home.html">LOGOUT</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <center>
+            <div class="login-box">
+                <h1> Payment info. </h1>
+                <form action="update.php" method="POST">
+
+                    <div class="input">
+                        <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+<input name="card-no" type="number" placeholder="Card No."></div>
+
+                    <div class="input">
+                        <i style="padding: 5px; width:20px; text-align: center;" class="fa fa-user"
+                            aria-hidden="true"></i><input name="name" type="text" placeholder="Name on Card"></div>
+
+                            <div class="input">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+<input
+                                    name="date" type="date" placeholder="Expiry date"></div>
+
+                  
+                    <center>
+                        <div class="btn"><button type="submit">PAY</button></div>
+                    </center>
+                </form>
+            </div>
+        </center>
+    </div>
+
+
+
+
+</body>
+
+</html>
