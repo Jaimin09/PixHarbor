@@ -13,6 +13,7 @@ An online platform which provides the utility of buying High Quality Images of d
 |retrieve_all_images_work.php | Display all 'Work' images to User|
 |save_image.php|Preview Image and price details|
 |add_to_cart.php|Add Image to Cart|
+|order_complete_file.php| Send mail to user on order confirmation|
 
 ## Image Workflow
 retrieve_all_images_fitness.php -> save_image.php -> add_to_cart.php -> retrieve_all_images_fitness.php(redirect)
