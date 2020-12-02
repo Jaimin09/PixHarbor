@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
 $password = ""; /* Password */
@@ -12,7 +14,7 @@ if (!$connection) {
 
 $query = "select * from all_images where category='work'";
 $res = mysqli_query($connection, $query);
-$email = "jaimin@gmail.com";
+$email = $_SESSION["email"];
 
 ?>
 

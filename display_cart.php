@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
 $password = ""; /* Password */
@@ -10,7 +12,7 @@ if (!$connection) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
- $email = "jaimin@gmail.com";
+ $email = $_SESSION["email"];
 //$email = $_SESSION["email"];
 
 $query = "select * from images where email = '$email'";

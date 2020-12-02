@@ -13,9 +13,9 @@ if(isset($_POST["email"])){
 
         $res=mysqli_query($connection,$query);
         if(mysqli_num_rows($res)>0){
-
             $user=mysqli_fetch_all($res,MYSQLI_ASSOC);
             $_SESSION['email'] = $email;
+            $_SESSION['name'] = $user['name'];
             header("location: gallery.php");
         }
 

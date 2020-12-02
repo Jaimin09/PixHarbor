@@ -1,4 +1,5 @@
 <?php
+session_start();
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
 $password = ""; /* Password */
@@ -11,7 +12,7 @@ if (!$connection) {
 }
 
 $image_name = $_POST['image_name'];
-$email = "jaimin@gmail.com";
+$email = $_SESSION["email"];
 
 // connect to the database
 $query = "insert into images values('$email','$image_name')";

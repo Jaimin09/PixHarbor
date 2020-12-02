@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
 $password = ""; /* Password */
