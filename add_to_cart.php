@@ -20,5 +20,7 @@ $res = mysqli_query($connection, $query);
 $folder=(explode('_',$image_name,2));
 $path = "Images/".$folder[0]."/".$image_name;
 
-header('localtion : retrieve_all_images_fitness.php');
+$redirect_name = $folder . "_images.php";
+
+header('localtion : $redirect_name');
 ?>

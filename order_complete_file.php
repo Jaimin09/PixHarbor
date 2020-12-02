@@ -4,7 +4,7 @@ session_start();
 
 $email = $_SESSION["email"];
 
-// $connection = mysqli_connect("localhost", "root", "", "pixharbor");
+$connection = mysqli_connect("localhost", "root", "", "pixharbor");
 
 require_once 'PHPMailer/PHPMailer-5.2-stable/PHPMailerAutoload.php';
 
