@@ -30,7 +30,7 @@ $res = mysqli_query($connection, $query);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>
-        GALLERY
+        CART
     </title>
     <style>
         .header {
@@ -116,6 +116,19 @@ $res = mysqli_query($connection, $query);
             background-color: skyblue;
             transition: 0.3s;
         }
+
+        .btn{
+           background-color: white;
+           color: black;
+           border-radius: 0px;
+           padding-top: 16px;
+           padding-bottom: 16px;
+           padding-left: 25px;
+           padding-right: 25px;
+           letter-spacing: 0.5px;
+           font-size: 15px;
+           
+       }
     </style>
 </head>
 
@@ -160,13 +173,14 @@ $res = mysqli_query($connection, $query);
                 echo "<div class='col-lg-4 col-sm-6'>
                         <div class='thumbnail'>
                             <img src='$path'>
+                            <h4>Price: $price</h4>
                         </div>
                     </div>";
             }            
             ?>
         </div>
         <?php echo "<h1> Total Price : $ $total_price </h1>" ?>
-        <button>Checkout</button>
+        <a href="#" class="btn" style="font-weight: bold; border-radius: 50px;">CHECKOUT</a>
     </div>
 
       
