@@ -15,7 +15,7 @@ $email = "jaimin@gmail.com";
 
 // connect to the database
 // $query = "insert into images values('$email','$image_name')";
-$query = "update user set temp_image = '$image_name' where email = '$email'"
+$query = "update user set temp_image = '$image_name' where email = '$email'";
 
 $res = mysqli_query($connection, $query);
 $folder=(explode('_',$image_name,2));
