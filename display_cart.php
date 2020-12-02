@@ -10,8 +10,8 @@ if (!$connection) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-// $email = "jaimin@gmail.com";
-$email = $_SESSION["email"];
+ $email = "jaimin@gmail.com";
+//$email = $_SESSION["email"];
 
 $query = "select * from images where email = '$email'";
 $res = mysqli_query($connection, $query);
@@ -140,8 +140,18 @@ $res = mysqli_query($connection, $query);
         <div class="row flex">
         
             <?php
+
+            $total_price = 0;
+
             while($row = mysqli_fetch_assoc($res)) {
+
                 $image_name = $row["image_name"];
+                $query2 = "select price from all_images where image_name = '$image_name'";
+                $res_price = mysqli_query($connection, $query2);
+                $row_price = mysqli_fetch_assoc($res_price);
+                $price = $row_price["price"];
+                $total_price += $price;
+
                 $folder=(explode('_',$image_name,2));
                 $path = "Images/".$folder[0]."/".$row["image_name"];
 
@@ -150,12 +160,14 @@ $res = mysqli_query($connection, $query);
                             <img src='$path'>
                         </div>
                     </div>";
-            }
+            }            
             ?>
         </div>
+        <?php echo "<h1> Total Price : $ $total_price </h1>" ?>
+        <button>Checkout</button>
     </div>
 
-    
+      
     <div class="container-fluid foot" style="background-color: black; text-align: center; padding: 50px;">
         <i class="fa fa-twitter" aria-hidden="true"></i>
         <i class="fa fa-facebook" aria-hidden="true"></i>
