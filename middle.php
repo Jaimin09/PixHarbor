@@ -10,9 +10,21 @@ if (!$connection) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$query = "select * from all_images where category='work'";
-$res = mysqli_query($connection, $query);
-$email = "jaimin@gmail.com";
+$image_name = $_POST["image_name"];
+$email = $_POST["email"];
+
+// connect to the database
+// $query = "insert into images values('$email','$image_name')";
+//$query = "update user set temp_image = '$image_name' where email = '$email'";
+$q_price = "select price from all_images where image_name = '$image_name' ";
+$res = mysqli_query($connection, $q_price);
+$row = mysqli_fetch_assoc($res);
+$price = $row["price"];
+
+$folder=(explode('_',$image_name,2));
+$path = "Images/".$folder[0]."/".$image_name;
+//echo "<img src = '$path'> ";
+
 
 ?>
 
@@ -107,24 +119,38 @@ $email = "jaimin@gmail.com";
             margin-bottom: 30px;
         }
 
-        .vi{
+        .vi {
             width: 100%;
             color: white;
-            padding: 10px;
+            padding: 5px;
             background-color: black;
         }
 
-        .vi:hover{
+        .vi:hover {
             width: 100%;
-          background-color: darkslategrey;
+            background-color: darkslategrey;
         }
 
         .btnrm:hover {
             color: white;
             background-color: skyblue;
             transition: 0.3s;
+
+
         }
-        
+
+          .btn{
+           background-color: white;
+           color: black;
+           border-radius: 0px;
+           padding-top: 16px;
+           padding-bottom: 16px;
+           padding-left: 25px;
+           padding-right: 25px;
+           letter-spacing: 0.5px;
+           font-size: 15px;
+           
+       }
     </style>
 </head>
 
@@ -148,34 +174,26 @@ $email = "jaimin@gmail.com";
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row flex">
-        
-            <?php
-            while($row = mysqli_fetch_assoc($res)) {
-                $image_name = $row["image_name"];
-                $folder=(explode('_',$image_name,2));
-                $path = "Images/".$folder[0]."/".$row["image_name"];
+    <div class="container" style="background-color: black; margin-top: 120px; padding-left: 0; border: 1px solid white;">
+        <div class="row">
+            <div class="col-sm-5">
+            <?php echo "<img style='width: 100%; height: auto;' src='$path'>"; ?>
+            </div>
+            <div class="col-sm-7">
 
-                echo "<div class='col-lg-4 col-sm-6'>
-                        <div class='thumbnail'>
-                            <img src='$path'>
-                            <form style = 'margin-bottom : 0;'action = 'middle.php' method = 'POST' >
-                            <input type='hidden' name='image_name' value='$image_name'>
-                            <input type='hidden' name='email' value='$email'>
-                            <button class='vi' type = 'submit'> View Image </button></form>
-                            
-                        </div>
-                        
-                    </div>
-                    ";
-            }
-            ?>
-
+                <?php echo "<form style='background-color: black;  margin-left: 220px;' action='add_to_cart.php' method = 'POST'>
+                <input type='hidden' name='image_name' value='$image_name'>
+                <input type='hidden' name='email' value='$email'>                
+                    <h3 style='margin-top: 100px;  margin-left: 17px;'>Price: $price </h3>
+                    <button type ='submit' class='btn' style='font-weight: bold; border-radius: 50px;'>ADD TO CART</button>
+                    "; 
+                ?>
+                </form>
+            </div>
         </div>
     </div>
 
-    
+
     <div class="container-fluid foot" style="background-color: black; text-align: center; padding: 50px;">
         <i class="fa fa-twitter" aria-hidden="true"></i>
         <i class="fa fa-facebook" aria-hidden="true"></i>

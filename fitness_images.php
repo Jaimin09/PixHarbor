@@ -110,7 +110,7 @@ $email = "jaimin@gmail.com";
         .vi{
             width: 100%;
             color: white;
-            padding: 5px;
+            padding: 10px;
             background-color: black;
         }
 
@@ -123,9 +123,8 @@ $email = "jaimin@gmail.com";
             color: white;
             background-color: skyblue;
             transition: 0.3s;
-
-
         }
+        
     </style>
 </head>
 
@@ -161,20 +160,18 @@ $email = "jaimin@gmail.com";
                 echo "<div class='col-lg-4 col-sm-6'>
                         <div class='thumbnail'>
                             <img src='$path'>
+                            <form style = 'margin-bottom : 0;'action = 'middle.php' method = 'POST' >
+                            <input type='hidden' name='image_name' value='$image_name'>
+                            <input type='hidden' name='email' value='$email'>
                             <button class='vi' type = 'submit'> View Image </button></form>
+                            
                         </div>
-                        <form action = 'save_image.php' method = 'POST' >
-                        <input type='hidden' name='image_name' value='$image_name'>
-                        <input type='hidden' name='email' value='$email'>
                         
                     </div>
-                    
                     ";
-              
             }
             ?>
 
-        
         </div>
     </div>
 
