@@ -16,7 +16,7 @@ if(isset($_POST["email"])){
 
             $user=mysqli_fetch_all($res,MYSQLI_ASSOC);
             $_SESSION['email'] = $email;
-            header("location: main.php");
+            header("location: gallery.php");
         }
 
         else{
