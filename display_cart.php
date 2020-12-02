@@ -180,7 +180,7 @@ $res = mysqli_query($connection, $query);
             ?>
         </div>
         <?php echo "<h1> Total Price : $ $total_price </h1>" ?>
-        <a href="#" class="btn" style="font-weight: bold; border-radius: 50px;">CHECKOUT</a>
+        <a href="credit.html" class="btn" style="font-weight: bold; border-radius: 50px;">CHECKOUT</a>
     </div>
 
       
