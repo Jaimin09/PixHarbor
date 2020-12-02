@@ -107,10 +107,24 @@ $email = "jaimin@gmail.com";
             margin-bottom: 30px;
         }
 
+        .vi{
+            width: 100%;
+            color: white;
+            background-color: black;
+        }
+
+        .vi:hover{
+            width: 100%;
+            color: black;
+            background-color: white;
+        }
+
         .btnrm:hover {
             color: white;
             background-color: skyblue;
             transition: 0.3s;
+
+
         }
     </style>
 </head>
@@ -125,7 +139,7 @@ $email = "jaimin@gmail.com";
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="gallery.html">HOME</a></li>
-                    <li><a href="cart.html">COLLECTION</a></li>
+                    <li><a href="display_cart.php">CART</a></li>
                     <li><a href="profile.php">PROFILE</a></li>
                     <li><a href="home.html">LOGOUT</a></li>
 
@@ -147,11 +161,12 @@ $email = "jaimin@gmail.com";
                 echo "<div class='col-lg-4 col-sm-6'>
                         <div class='thumbnail'>
                             <img src='$path'>
+                            <button class='vi' type = 'submit'> View Image </button></form>
                         </div>
                         <form action = 'save_image.php' method = 'POST' >
                         <input type='hidden' name='image_name' value='$image_name'>
                         <input type='hidden' name='email' value='$email'>
-                        <button type = 'submit'> View Image </button></form>
+                        
                     </div>
                     
                     ";
