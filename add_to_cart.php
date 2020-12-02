@@ -21,7 +21,7 @@ $res = mysqli_query($connection, $query);
 $folder=(explode('_',$image_name,2));
 $path = "Images/".$folder[0]."/".$image_name;
 
-$redirect_name = $folder . "_images.php";
-
-header('localtion : $redirect_name');
+$redirect_name = $folder[0] . "_images.php";
+echo '<script>alert("Added to Cart")</script>'; 
+header("location: $redirect_name");
 ?>

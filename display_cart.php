@@ -173,7 +173,7 @@ $res = mysqli_query($connection, $query);
                 echo "<div class='col-lg-4 col-sm-6'>
                         <div class='thumbnail'>
                             <img src='$path'>
-                            <h4>Price: $price</h4>
+                            <center><h4 style = 'color:black;'>Price: $ $price</h4></center>
                         </div>
                     </div>";
             }            
