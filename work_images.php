@@ -139,7 +139,7 @@ $email = $_SESSION["email"];
                             src="Images/pixharbor2.png" /></a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="gallery.html">HOME</a></li>
+                    <li><a href="gallery.php">HOME</a></li>
                     <li><a href="display_cart.php">CART</a></li>
                     <li><a href="profile.php">PROFILE</a></li>
                     <li><a href="home.html">LOGOUT</a></li>
