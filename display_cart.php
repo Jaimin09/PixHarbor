@@ -1,3 +1,25 @@
+<?php
+$host = "localhost"; /* Host name */
+$user = "root"; /* User */
+$password = ""; /* Password */
+$dbname = "pixharbor"; /* Database name */
+
+$connection = mysqli_connect($host, $user, $password,$dbname);
+// Check connection
+if (!$connection) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// $email = "jaimin@gmail.com";
+$email = $_SESSION["email"];
+
+$query = "select * from images where email = '$email'";
+$res = mysqli_query($connection, $query);
+
+?>
+
+
+
 <html>
 
 <head>
@@ -105,7 +127,6 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="gallery.html">HOME</a></li>
-                    <li><a href="cart.html">COLLECTION</a></li>
                     <li><a href="profile.php">PROFILE</a></li>
                     <li><a href="home.html">LOGOUT</a></li>
 
@@ -118,59 +139,23 @@
     <div class="container">
         <div class="row flex">
         
-            <div class="col-lg-4 col-sm-6">
-                <div class="thumbnail">
-                    <img src="https://source.unsplash.com/sBvouTuXoAE">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="thumbnail">
-                    <img src="https://source.unsplash.com/VQYxQiiRky0">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="thumbnail">
-                    <img src="https://source.unsplash.com/gJFvHkUHdSI">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="thumbnail">
-                    <img src="https://source.unsplash.com/Bjw6dbIYtNE">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="thumbnail">
-                    <img src="https://source.unsplash.com/C52dylsC1-g">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="thumbnail">
-                    <img src="https://source.unsplash.com/wsMwDxF8SKA">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="thumbnail">
-                    <img src="https://source.unsplash.com/sfze-8LfCXI">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="thumbnail">
-                    <img src="https://source.unsplash.com/8oydDuX4AAM">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="thumbnail">
-                    <img src="https://source.unsplash.com/PN_c3RKCVlA">
-                </div>
-            </div>
-        
+            <?php
+            while($row = mysqli_fetch_assoc($res)) {
+                $image_name = $row["image_name"];
+                $folder=(explode('_',$image_name,2));
+                $path = "Images/".$folder[0]."/".$row["image_name"];
+
+                echo "<div class='col-lg-4 col-sm-6'>
+                        <div class='thumbnail'>
+                            <img src='$path'>
+                        </div>
+                    </div>";
+            }
+            ?>
         </div>
     </div>
 
     
-
-
-
     <div class="container-fluid foot" style="background-color: black; text-align: center; padding: 50px;">
         <i class="fa fa-twitter" aria-hidden="true"></i>
         <i class="fa fa-facebook" aria-hidden="true"></i>
