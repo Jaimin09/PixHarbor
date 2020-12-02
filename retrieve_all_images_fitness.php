@@ -29,7 +29,7 @@ $email = "jaimin@gmail.com";
 		$folder=(explode('_',$image_name,2));
         $path = "Images/".$folder[0]."/".$row["image_name"];
         echo "<img src = '$path' alt = 'image'> ";
-
+		//here
         echo "<form action = 'save_image.php' method = 'POST' ><input type='hidden' name='image_name' value='$image_name'><input type='hidden' name='email' value='$email'>";
         echo "<button type = 'submit'> View Image </button></form>";
 	}
