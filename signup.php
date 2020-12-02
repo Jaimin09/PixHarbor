@@ -24,7 +24,7 @@ $query = "INSERT INTO `user` (`email`, `password`, `name`, `phone`)
 
 if(mysqli_query($connection, $query)){
     echo "<br><br><h2>Successfully Signed Up !</h2><br><br>";
-    header("location: login.html");
+    header("location: login.php");
 }
 else
     echo "<br><h2>Sign up Error. Please Try again !</h2><br><br>";
@@ -34,6 +34,6 @@ else
 
 <html>
     <body>
-        <button onclick = "window.location.href='login.html'">Back to Login Up Page</button>
+        <button onclick = "window.location.href='login.php'">Back to Login Up Page</button>
     </body>
 </html>
