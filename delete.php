@@ -20,7 +20,7 @@ else
 
 <html>
     <body>
-        <button onclick = "window.location.href='login.html'">Go to Login Page</button>
+        <button onclick = "window.location.href='login.php'">Go to Login Page</button>
         <button onclick = "window.location.href='signup.html'">Back to Sign Up Page</button>
     </body>
 </html>
