@@ -198,8 +198,6 @@ else echo "<h2>There was an error, Please try again!!!</h2>";
         
             <?php
 
-            $total_price = 0;
-
             while($row = mysqli_fetch_assoc($res)) {
 
                 $image_name = $row["image_name"];
@@ -207,10 +205,12 @@ else echo "<h2>There was an error, Please try again!!!</h2>";
                 $folder=(explode('_',$image_name,2));
                 $path = "Images/".$folder[0]."/".$row["image_name"];
 
+                $link = "raw.githubusercontent.com/Jaimin09/PixHarbor/main/".$path;
+
                 echo "<div class='col-lg-4 col-sm-6'>
                         <div class='thumbnail'>
                             <img src='$path'>
-                            <center><a href='raw.githubusercontent.com/Jaimin09/PixHarbor/main/'.$path download>
+                            <center><a href=$link download>
                             Download
                           </a></center>
                         </div>
