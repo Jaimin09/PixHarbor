@@ -13,7 +13,7 @@ $query = "select * from images where email = '$email'";
 $res = mysqli_query($connection, $query);
 
 $total_price = 0;
-$order_invoice = "A";
+$order_invoice = "";
 
 while($row = mysqli_fetch_assoc($res)) {
     $image_name = $row["image_name"];
@@ -25,7 +25,7 @@ while($row = mysqli_fetch_assoc($res)) {
     $price = $row_price["price"];
     $total_price += $price;
 
-    $order_invoice .= $image_name . " - Price : $". $price . "\n";
+    $order_invoice .= $image_name . " - Price : $". $price . "<br>";
 }
 
 require_once 'PHPMailer/PHPMailer-5.2-stable/PHPMailerAutoload.php';
@@ -35,13 +35,7 @@ $to = $email;
 $password = 'Pixharbor@1';
 $sub = 'Order Placed Successfully';
 $body = "<html><body><h1>Thank You for placing your order with us !<br></h1>
-
-Your Invoice is given below : <br>
-<?php $order_invoice ?>
-<br>
-<?php Your Total Price billed : $total_price ?>
-
-</body></html>";
+Your Invoice is given below : <br><br>" . $order_invoice ."<br>"."<h3>Total Billed Price : $".$total_price."</h3><br>With Regards,<br>Team PixHarbor</body></html>";
 
 $mail = new PHPMailer();
 $mail->isSMTP();
@@ -234,7 +228,7 @@ else echo "<h2>There was an error, Please try again!!!</h2>";
             }
             
             $query_delete = "delete from images where email = '$email'";
-            $res_delete = mysqli_query($connection, $query_delete);
+            mysqli_query($connection, $query_delete);
             ?>
         </div>
         <!-- <?php echo "<h1> Total Price : $ $total_price </h1>" ?> -->

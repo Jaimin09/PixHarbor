@@ -12,7 +12,7 @@ $query = "DELETE from `user` WHERE `email` = '$acc';";
 if(mysqli_query($connection, $query)){
     echo "<br><br><h2>Successfully Deleted Account !</h2><br><br>";
     session_destroy();
-    header("location : login.php")
+    header("location: login.php");
 }
 else
     echo "<br>Error while Deleting account. Try again !<br><br>";
