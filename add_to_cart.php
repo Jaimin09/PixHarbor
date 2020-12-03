@@ -19,7 +19,7 @@ $query = "insert into images values('$email','$image_name')";
 
 $res = mysqli_query($connection, $query);
 $folder=(explode('_',$image_name,2));
-$path = "Images/".$folder[0]."/".$image_name;
+$path = "Images/".$folder[0]."_new/".$image_name;
 
 $redirect_name = $folder[0] . "_images.php";
 echo '<script>alert("Added to Cart")</script>'; 
