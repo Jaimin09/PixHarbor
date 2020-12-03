@@ -1,6 +1,7 @@
 <?php
 session_start();
-//echo $_SESSION['name'];
+setcookie("user_name", "PixHarbor", time()+120,'/');
+
 ?>
 
 <html>
@@ -111,7 +112,7 @@ session_start();
     
    <div class="container" style="margin-top:60px; text-align: center;">
 
-    <!-- <?php echo "<h1>Hi Jaimin !</h1>"; ?> -->
+    <h1>Hi <?php echo $_SESSION["name"]; ?>!</h1> 
 
 
        <h2 style="font-size: 43px;

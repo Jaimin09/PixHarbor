@@ -186,7 +186,7 @@ $path = "Images/".$folder[0]."_new/".$image_name;
                 <?php echo "<form style='background-color: black;  margin-left: 220px;' action='add_to_cart.php' method = 'POST'>
                 <input type='hidden' name='image_name' value='$image_name'>
                 <input type='hidden' name='email' value='$email'>                
-                    <h3 style='margin-top: 100px;  margin-left: 17px;'>Price: $price </h3>
+                    <h3 style='margin-top: 100px;  margin-left: 17px;'>Price: $ $price </h3>
                     <button type ='submit' class='btn' style='font-weight: bold; border-radius: 50px;'>ADD TO CART</button>
                     "; 
                 ?>
