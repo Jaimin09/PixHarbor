@@ -24,7 +24,7 @@ $row = mysqli_fetch_assoc($res);
 $price = $row["price"];
 
 $folder=(explode('_',$image_name,2));
-$path = "Images/".$folder[0]."/".$image_name;
+$path = "Images/".$folder[0]."_new/".$image_name;
 //echo "<img src = '$path'> ";
 
 

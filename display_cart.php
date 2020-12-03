@@ -168,7 +168,7 @@ $res = mysqli_query($connection, $query);
                 $total_price += $price;
 
                 $folder=(explode('_',$image_name,2));
-                $path = "Images/".$folder[0]."/".$row["image_name"];
+                $path = "Images/".$folder[0]."_new/".$row["image_name"];
 
                 echo "<div class='col-lg-4 col-sm-6'>
                         <div class='thumbnail'>

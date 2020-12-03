@@ -169,7 +169,22 @@ else echo "<h2>There was an error, Please try again!!!</h2>";
            padding-right: 25px;
            letter-spacing: 0.5px;
            font-size: 15px;
-           
+       }
+
+       .download{
+           width: 100%;
+           padding : 3px;
+           padding-left : 150px;
+           padding-right : 138px;
+           margin :0;
+           background-color: black;
+           color: white;
+           text-decoration : none;
+       }
+       .download:hover{
+           color : gray;
+           background-color: white;
+           text-decoration : none;
        }
     </style>
 </head>
@@ -204,19 +219,22 @@ else echo "<h2>There was an error, Please try again!!!</h2>";
                 $image_name = $row2["image_name"];
                 
                 $folder=(explode('_',$image_name,2));
-                $path = "Images/".$folder[0]."/".$row2["image_name"];
+                $path = "Images/".$folder[0]."_new/".$row2["image_name"];
 
                 $link = "raw.githubusercontent.com/Jaimin09/PixHarbor/main/".$path;
 
                 echo "<div class='col-lg-4 col-sm-6'>
                         <div class='thumbnail'>
                             <img src='$path'>
-                            <center><a href=$path download>
+                            <center><a class='download' href=$path download>
                             Download
                           </a></center>
                         </div>
                     </div>";
-            }            
+            }
+            
+            $query_delete = "delete from images where email = '$email'";
+            $res_delete = mysqli_query($connection, $query_delete);
             ?>
         </div>
         <!-- <?php echo "<h1> Total Price : $ $total_price </h1>" ?> -->
