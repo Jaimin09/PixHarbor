@@ -29,7 +29,6 @@ if(isset($_POST["email"])){
     }
 }
 ?>
-
 <html>
 <head>
       <meta charset="utf-8">
@@ -37,7 +36,7 @@ if(isset($_POST["email"])){
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
        <title>
-           Login page
+           LOGIN 
        </title>
        <style>
            @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
@@ -119,6 +118,9 @@ if(isset($_POST["email"])){
               color: black;
          
           }
+           .header{
+              display: inline;
+          }
            
      
            
@@ -133,14 +135,18 @@ if(isset($_POST["email"])){
     
                   <nav class="navbar">
   <div class="container">
+            <div class="header">
+
     <div class="navbar-header">
-      <a class="navbar-brand" href="#" style="color: white;font-size: 28px; font-weight: bold;">LOGO</a>
+        <a class="navbar-brand" href="#"><img style="height: 50px; width: 25%; margin-top: 30px;"
+                src="Images/pixharbor2.png" /></a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="home.html">HOME</a></li>
       <li><a href="signup.html">SIGNUP</a></li>
 
     </ul>
+    </div>
   </div>
 </nav>
     

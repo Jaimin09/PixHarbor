@@ -27,7 +27,7 @@ while($row = mysqli_fetch_assoc($res)) {
 
     $order_invoice .= $image_name . " - Price : $". $price . "\n";
 }
-echo "Total : $total_price ";
+
 require_once 'PHPMailer/PHPMailer-5.2-stable/PHPMailerAutoload.php';
 
 $from = 'pixharbor@gmail.com';
@@ -58,7 +58,7 @@ $mail->IsHTML(true);
 $mail->AddAddress($to);
 
 if($mail->Send()) {
-    echo "<h2>Your Order has been placed successfully and invoice is mailed to you!!!</h2>";
+    //echo "<h2>Your Order has been placed successfully and invoice is mailed to you!!!</h2>";
 }
 else echo "<h2>There was an error, Please try again!!!</h2>";
 
@@ -185,7 +185,7 @@ else echo "<h2>There was an error, Please try again!!!</h2>";
                 <ul class="nav navbar-nav">
                     <li><a href="gallery.php">HOME</a></li>
                     <li><a href="profile.php">PROFILE</a></li>
-                    <li><a href="home.html">LOGOUT</a></li>
+                    <li><a href="logout.php">LOGOUT</a></li>
 
 
                 </ul>
@@ -198,19 +198,20 @@ else echo "<h2>There was an error, Please try again!!!</h2>";
         
             <?php
 
-            while($row = mysqli_fetch_assoc($res)) {
+            $res2 = mysqli_query($connection, $query);
+            while($row2 = mysqli_fetch_assoc($res2)) {
 
-                $image_name = $row["image_name"];
+                $image_name = $row2["image_name"];
                 
                 $folder=(explode('_',$image_name,2));
-                $path = "Images/".$folder[0]."/".$row["image_name"];
+                $path = "Images/".$folder[0]."/".$row2["image_name"];
 
                 $link = "raw.githubusercontent.com/Jaimin09/PixHarbor/main/".$path;
 
                 echo "<div class='col-lg-4 col-sm-6'>
                         <div class='thumbnail'>
                             <img src='$path'>
-                            <center><a href=$link download>
+                            <center><a href=$path download>
                             Download
                           </a></center>
                         </div>
@@ -218,8 +219,7 @@ else echo "<h2>There was an error, Please try again!!!</h2>";
             }            
             ?>
         </div>
-        <?php echo "<h1> Total Price : $ $total_price </h1>" ?>
-        <a href="credit.html" class="btn" style="font-weight: bold; border-radius: 50px;">CHECKOUT</a>
+        <!-- <?php echo "<h1> Total Price : $ $total_price </h1>" ?> -->
     </div>
 
       
