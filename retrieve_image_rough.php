@@ -29,7 +29,7 @@ $res = mysqli_query($connection, $query);
 		//echo $row["image_name"];
 		$image_name = $row["image_name"];
 		$folder=(explode('_',$image_name,2));
-        $path = "Images/".$folder[0]."/".$row["image_name"];
+        $path = "Images/".$folder[0]."_new/".$row["image_name"];
         echo "<img src = '$path' alt = 'image'> ";
 
         echo "<form action = 'save_image.php' method = 'POST' ><input type='hidden' name='image_name' value='$image_name'>";

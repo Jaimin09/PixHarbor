@@ -19,7 +19,7 @@ $query = "update user set temp_image = '$image_name' where email = '$email'";
 
 $res = mysqli_query($connection, $query);
 $folder=(explode('_',$image_name,2));
-$path = "Images/".$folder[0]."/".$image_name;
+$path = "Images/".$folder[0]."_new/".$image_name;
 echo "<img src = '$path'> ";
 echo "Price : $10";
 
