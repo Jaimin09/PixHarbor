@@ -216,7 +216,10 @@ else echo "<h2>There was an error, Please try again!!!</h2>";
                           </a></center>
                         </div>
                     </div>";
-            }            
+            }
+            
+            $query_delete = "delete from images where email = '$email'";
+            $res_delete = mysqli_query($connection, $query_delete);
             ?>
         </div>
         <!-- <?php echo "<h1> Total Price : $ $total_price </h1>" ?> -->
