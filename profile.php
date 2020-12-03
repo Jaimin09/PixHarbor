@@ -26,10 +26,12 @@ if(mysqli_num_rows($res)>0){
 
     <p>
         <?php
+        
             echo "email : ", $_SESSION["email"], "<br>";
             echo "name : ",$_SESSION["name"], "<br>";
             echo "password : ", $_SESSION["password"], "<br>";
             echo "phone Number : ", $_SESSION["phone"], "<br>";
+            
         ?>
     </p>
     
