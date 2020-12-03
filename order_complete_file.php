@@ -185,7 +185,7 @@ else echo "<h2>There was an error, Please try again!!!</h2>";
                 <ul class="nav navbar-nav">
                     <li><a href="gallery.php">HOME</a></li>
                     <li><a href="profile.php">PROFILE</a></li>
-                    <li><a href="home.html">LOGOUT</a></li>
+                    <li><a href="logout.php">LOGOUT</a></li>
 
 
                 </ul>

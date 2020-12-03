@@ -84,7 +84,7 @@ if(mysqli_num_rows($res)>0){
                 <ul class="nav navbar-nav">
                     <li><a href="gallery.php">HOME</a></li>
                     <li><a href="display_cart.php">CART</a></li>
-                    <li><a href="login.html">LOGOUT</a></li>
+                    <li><a href="logout.php">LOGOUT</a></li>
 
                 </ul>
             </div>
@@ -92,8 +92,8 @@ if(mysqli_num_rows($res)>0){
     </nav>
 
     <div class="container">
-        <h1 style='font-weight: bolder;'>Hello <?php echo $_SESSION["name"]; ?> !,</h1>
-        <p style = "font-size:20px;">
+        <h1 style='font-weight: bolder;'>Hello <?php echo $_SESSION["name"]; ?> !</h1>
+        <p style = "font-size:20px; margin : 50px; margin-left:0px;">
         <?php
         
             echo "Email : ", $_SESSION["email"], "<br>";

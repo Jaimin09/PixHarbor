@@ -142,7 +142,7 @@ $email = $_SESSION["email"];
                     <li><a href="gallery.php">HOME</a></li>
                     <li><a href="display_cart.php">CART</a></li>
                     <li><a href="profile.php">PROFILE</a></li>
-                    <li><a href="home.html">LOGOUT</a></li>
+                    <li><a href="logout.php">LOGOUT</a></li>
 
 
                 </ul>

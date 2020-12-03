@@ -3,10 +3,5 @@
     session_destroy();
     
     echo "<h2>Successfully Loged Out ! </h2>";
+    header("location : login.php");
 ?>
-
-<html>
-<body>
-    <button onclick = "window.location.href='login.php'"> Go to Login Page </button>
-</body>
-</html>
