@@ -197,10 +197,10 @@ $path = "Images/".$folder[0]."/".$image_name;
 
 
     <div class="container-fluid foot" style="background-color: black; text-align: center; padding: 50px;">
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-        <i class="fa fa-linkedin" aria-hidden="true"></i><br><br>
+        <a href="https://www.linkedin.com/in/shreyash-kadam-8a9b41198"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/shtrokes_139-108439647264662"></a> <i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/jaiminpatel_009/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/?lang=en-in"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 
     </div>
 
